@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../libs/bootstrap.css" />
+	</head>
+
+	<body ng-controller="Ctrl">
+		<!--<ul>
+			<li ng-repeat="province in provinces">
+				{{province.name}}
+			</li>
+		</ul>-->
+		<div class="panel-group container" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="">
+			<div class="panel panel-default" ng-repeat="province in provinces">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+        			<a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}" aria-expanded="true" aria-controls="collapseOne">
+        				{{province.name}}<span class="badge">{{$index+1}}</span>
+			        </a>
+			      </h4>
+				</div>
+				<div id="collapse{{$index}}" class="panel-collapse collapse {{$index ==0?'in':''}}" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul class="list-group">
+						  <li class="list-group-item" ng-repeat = "city in province.cities">{{city.name}}<span class="badge">{{$index+1}}</span></li>
+						</ul>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+	<script src="../libs/jquery-1.11.0.js"></script>
+	<script src="../libs/bootstrap.min.js"></script>
+	<script src="../libs/angular.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var app = angular.module("myApp", []);
+		app.controller("Ctrl", function($scope) {
+			var provinces = [{
+				"name": "浙江",
+				"cities": [{
+					"name": "金华"
+				}, {
+					"name": "杭州"
+				}, {
+					"name": "温州"
+				}]
+			}, {
+				"name": "河南",
+				"cities": [{
+					"name": "郑州"
+				}, {
+					"name": "洛阳"
+				}, {
+					"name": "邓州"
+				}]
+			}, {
+				"name": "南阳",
+				"cities": [{
+					"name": "邓州"
+				}, {
+					"name": "陶营"
+				}, {
+					"name": "内乡"
+				}]
+			}];
+			$scope.provinces = provinces;
+		})
+	</script>
+
+</html>

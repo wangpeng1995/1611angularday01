@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-controller = "Ctrl">
+		{{users[0].name+"年龄是"+users[0].age+"喜欢打"+users[0].hobby}}
+		{{"我的偶像是"+users[1].name+"他今年"+users[1].age+"有"+users[1].child+"个孩子了"}}
+	</body>
+	<script src="../libs/angular.js"></script>
+	<script>
+		var app = angular.module("myApp",[]);
+		app.controller("Ctrl",function($scope) {
+			$scope.users=[
+			{
+				"name":"王朋",
+				"age":"21",
+				"hobby":"篮球",
+				"ouxiang":"麦迪"
+			},
+			{
+				"name":"麦迪",
+				"age":"38",
+				"hobby":"篮球",
+				"child":"4"
+			}
+			
+			
+			];
+		})
+	</script>
+</html>

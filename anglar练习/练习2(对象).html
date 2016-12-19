@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-controller = "Ctrl">
+		  {{"我的偶像是"+user.userName+"他的爱好是"+user.hobby+"今年"+user.age+"岁了"}}
+		  {{"麦迪的"+maidi.userName+"是最"+maidi.shanchang}}
+	</body>
+	<script src="../libs/angular.js"></script>
+	 <script>
+	 	var app = angular.module("myApp",[]);
+	 	app.controller("Ctrl",function($scope) {
+	 		$scope.user={
+	 		"userName":"麦迪",
+	 		"sex":"男",
+	 		"hobby":"篮球",
+	 		"age":"38"
+	 		}
+	 		$scope.maidi = {
+	 			"userName":"干拔",
+	 			"shanchang":"飘逸"
+	 		}
+	 	})
+	 </script>
+</html>

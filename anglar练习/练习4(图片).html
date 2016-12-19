@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-controller = "Ctrl">
+		<img ng-src="{{src}}">
+		//注意用ng-src
+	</body>
+	<script src="../libs/angular.js"></script>
+	 <script>
+	 	var app = angular.module("myApp",[]);
+	 	app.controller("Ctrl",function($scope) {
+	 		$scope.src="banner1.jpg";
+	 	})
+	 </script>
+</html>
